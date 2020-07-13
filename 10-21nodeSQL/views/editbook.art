@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改图书</title>
+    <link rel="stylesheet" href="css/pure.css">
+    <style>
+        button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>修改图书</h1>
+    <hr />
+    <form action="/editbook" method="POST" class="pure-form">
+        <table class="pure-table pure-table-bordered">
+            <tr>
+                <td>标题</td>
+                <td>
+                    <input type="text" name="title" value="{{book.title}}">
+                </td>
+            </tr>
+            <tr>
+                <td>作者</td>
+                <td>
+                    <input type="text" name="author" value="{{book.author}}">
+                </td>
+            </tr>
+            <tr>
+                <td>分类</td>
+                <td>
+                    <input type="text" name="classify" value="{{book.classify}}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="hidden" name="id" value="{{book.id}}">
+                    <button class="pure-button pure-button-primary" type="submit">提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

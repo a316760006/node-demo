@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUBA学生学籍管理|管理员登录</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login_wrap">
+        <form action="/adminLogin" method="POST" class="pure-form">
+            <div class="login_box">
+                <div class="login_title">
+                    <div id="logo">
+                        <img src="img/logo03.png" alt="北京工商管理专修学院">
+                    </div>
+                </div>
+                <div class="login_pad">
+                    <div class="input_box">
+                        <legend>admin:</legend>
+                        <input type="text" name="adminname" value="npc">
+                    </div>
+                    <div class="input_box">
+                        <legend>password:</legend>
+                        <input type="password" name="password" value="1234567">
+                    </div>
+                    <div class="input_box">
+                        <input type="submit" value="登录" class="pure-button-primary">
+                    </div>
+                    {{if errmsg}}
+                    <div class="errmsg">
+
+                        {{errmsg}}
+
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

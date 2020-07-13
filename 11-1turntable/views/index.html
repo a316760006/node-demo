@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幸运大转盘</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>北京工商管理专修学院</h1>
+        <h3>数字媒体学院-web架构专业</h3>
+        <p>幸运大转盘</p>
+    </header>
+    <section id="mainbody">
+        <div class="turntable">
+            <div class="pointer"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>
+            Copyright © 1994-2018 北京工商管理专修学院 版权所有
+        </p>
+        <p>
+            地址：北京市昌平区南口南大街21号 010-89794134 010-89794135 京ICP备06005330号 京公网安备110114000274号
+        </p>
+    </footer>
+    <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/rotate.js"></script>
+    <script>
+        $(function () {
+            var $pointer = $('.pointer');
+            var prize = [{
+                name: '中性笔',
+                rotate: [12, 3, 7]
+            }, {
+                name: '学习灯',
+                rotate: [2, 10]
+            }, {
+                name: '雨伞',
+                rotate: [4, 9]
+            }, {
+                name: '水杯',
+                rotate: [5, 8]
+            }, {
+                name: '笔袋',
+                rotate: [1, 11, 6]
+            }]
+            $pointer.on('click', function () {
+                // var result=rnd(0,360)+(360*rnd(1,3));
+                $.get('/getRotate', function (data) {
+                    //data.rotate 就是我要的角度值
+                    var result=data.rotate;
+                    console.log('角度',result);
+                    $pointer.animate({
+                        'rotate': '0deg'
+                    }, 50, function () {
+                        $pointer.animate({
+                            rotate: result+'deg'
+                        }, 1000, function () {
+                            stopPos = Math.ceil((result % 360) / 30);
+                            getPrize = '';
+                            for (i = 0; i < prize.length; i++) {
+                                for (j = 0; j < prize[i].rotate.length; j++) {
+                                    if (stopPos == prize[i].rotate[j]) {
+                                        getPrize = prize[i].name;
+                                        break;
+                                    }
+                                }
+                            }
+                            $.get('/prizeResult', {
+                                prize: getPrize
+                            }, function (data) {
+                                alert(data.msg);
+                            })
+                            // console.log('获得的奖品是:',getPrize);
+                        })
+                    })
+                });
+
+
+
+            })
+
+            
+        })
+        //30deg一格
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表</title>
+</head>
+
+<body>
+    <h1>列表:</h1>
+    <ul>
+        <!-- 相当于 for each -->
+        {{each list_data}}
+        <li>
+            <!-- 通过 $value 获取对象的值 -->
+            {{$index}} {{$value.name}}
+        </li>
+        {{/each}}
+        <p>
+            <b>导入的数据</b>
+            <i>{{num}}</i>
+            <i>{{sayhello('哈哈')}}</i>
+        </p>
+    </ul>
+</body>
+
+</html>

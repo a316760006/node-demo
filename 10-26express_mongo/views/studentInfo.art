@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUBA学生学籍管理|学生学籍信息页</title>
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>
+        [{{name}}] 学籍信息：
+    </h1>
+    <hr/>
+    <br>
+    <br>
+    <table class="pure-table student-table">
+        <thead>
+            <tr>
+                <th colspan="5">[{{name}}] 学籍信息表</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">
+                    <!-- 照片 -->
+                    {{if photo}}
+                    <img src='{{photo}}' />
+                    
+                    {{/if}}
+                </td>
+                <td>
+                    姓名：
+                </td>
+                <td>
+                    {{name}}
+                </td>
+                <td>
+                    性别：
+                </td>
+                <td>
+                    {{if gender}}
+                    男
+                    {{else}}
+                    女
+                    {{/if}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    学号：
+                </td>
+                <td colspan="3">
+                    {{studentId}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    籍贯：
+                </td>
+                <td>
+                    {{hometown}}
+                </td>
+                <td>
+                    年龄
+                </td>
+                <td>
+                    {{age}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    学院：
+                </td>
+                <td colspan="2">
+                    {{faculty}}
+                </td>
+                <td>
+                    学制：
+                </td>
+                <td>
+                    {{classtype}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    专业：
+                </td>
+                <td colspan="2">
+                    {{master}}
+                </td>
+                <td>
+                    班级：
+                </td>
+                <td>
+                    {{classname}}
+                </td>
+            </tr>
+            <tr>
+                <td>入学时间：</td>
+                <td colspan="4">{{dateToString(jointime)}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

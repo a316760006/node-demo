@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUBA学生学籍管理|管理</title>
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div id="logo">
+                <img src="img/logo03.png" alt="北京工商管理专修学院">
+            </div>
+            <div class="admin_info">
+                <span class="adminname">
+                    管理员：{{loginName}}
+                </span>
+                <span class="adminlevel">
+                    级别：
+                    {{if loginLevel==1}}
+                    普通管理员
+                    {{else if loginLevel==2}}
+                    超级管理员
+                    {{else}}
+                    超超级管理员
+                    {{/if}}
+                </span>
+                <a href="/admin/editPassword">修改密码</a>
+            </div>
+            <div class="nav">
+                <ul class="clearfix">
+                    <li><a href="/manage/faculty">学院管理</a></li>
+                    <li><a href="/manage/class">班级管理</a></li>
+                    <li><a href="/manage/student">学生管理</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <!-- 学院统计信息 -->
+            <div class="content_box">
+                <h3>
+                    学院信息
+                </h3>
+                <div class="box_info">
+                    <ul>
+                        <li>
+                            学院总数：
+                            <span>6</span>
+                            <ul>
+                                <li>xxx学院</li>
+                                <li>xxx学院</li>
+                                <li>xxx学院</li>
+                                <li>xxx学院</li>
+                                <li>xxx学院</li>
+                                <li>xxx学院</li>
+                            </ul>
+                        </li>
+                        <li>
+                            专业总数：
+                            <span>18</span>
+                            <ul>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                                <li>xxx学院-xxx专业</li>
+                            </ul>
+                        </li>
+                        <li>
+                            学院总人数：
+                            <span>1800</span>
+                            <ul>
+                                <li>xxx学院-100学员</li>
+                                <li>xxx学院-100学员</li>
+                                <li>xxx学院-100学员</li>
+                                <li>xxx学院-100学员</li>
+                                <li>xxx学院-100学员</li>
+                                <li>xxx学院-100学员</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 班级统计信息 -->
+            <div class="content_box">
+                <h3>
+                    班级信息
+                </h3>
+                <table>
+                    
+                </table>
+            </div>
+            <!-- 学生统计信息 -->
+            <div class="content_box">
+                <h3>
+                    学生信息
+                </h3>
+                <table>
+                    
+                </table>
+            </div>
+
+        </div>
+        <div class="footer">
+            <p>
+                Copyright © 1994-2018 北京工商管理专修学院 版权所有
+            </p>
+            <p>
+                地址：北京市昌平区南口南大街21号 010-89794134 010-89794135 京ICP备06005330号 京公网安备110114000274号
+            </p>
+        </div>
+    </div>
+</body>
+</html>

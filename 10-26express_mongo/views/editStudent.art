@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改学员学籍信息</title>
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+   <h1>
+        修改 [{{name}}] 学员学籍信息
+   </h1>
+   <hr>
+
+   <form action="/manage/editStudentHandle" enctype="multipart/form-data" method="POST" class="pure-form">
+    <table class="pure-table pure-table-horizontal">
+        <tr>
+            <th>
+                照片
+            </th>
+            <td>
+                <input type="file" name="photo" value="">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                学制
+            </th>
+            <td>
+                <input type="hidden" name="studentId" value="{{studentId}}">
+
+                <input type="radio" name="classtype" 
+                {{if classtype=="两年制"}}
+                checked
+                {{/if}}
+                 value="两年制">
+
+                <label for="classtype">两年制</label>
+
+                <input type="radio" name="classtype" 
+                {{if classtype=='三年制'}}
+                checked
+                {{/if}}
+                 value="三年制">
+
+                <label for="classtype">三年制</label>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                入学时间
+            </th>
+            <td>
+                <input type="date" name="jointime" value="{{dateToString(jointime)}}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <button type="submit" class="pure-button-primary">提交</button>
+            </td>
+        </tr>
+        {{if errmsg}}
+        <tr>
+            <td colspan="2" align="center">
+                {{errmsg}}
+            </td>
+        </tr>
+        {{/if}}
+    </table>
+   </form>
+</body>
+</html>

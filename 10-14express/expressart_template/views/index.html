@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1>列表:</h1>
+    <ul>
+        <!-- 相当于 for each -->
+        {{each list_data}}
+        <li>
+            <!-- 通过 $value 获取对象的值 -->
+            <span>{{$index}}</span>
+            <span>
+                <img src={{$value.img}} alt="1">
+            </span>
+            <span>{{$value.name}}</span>
+        </li>
+        {{/each}}
+    </ul>
+    <!-- 表单传输时,如果是传输文件,需要把 form enctype 设置为 multipart/form-data -->
+    <form action="/add" method="post" enctype="multipart/form-data">
+        英雄名字: <input type="text" value="" name="name" />
+        <br>
+        英雄头像: <input type="file" value="" name="img" />
+        <br>
+        <button type="submit" name="btn">提交</button>
+    </form>
+</body>
+<!-- <script src="/js/index.js"></script> -->
+
+</html>

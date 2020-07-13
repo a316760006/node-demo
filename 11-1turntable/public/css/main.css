@@ -1,0 +1,35 @@
+*{margin: 0;
+padding: 0;}
+body{
+    background: cornsilk;
+    color: deeppink;
+}
+.header{
+    margin: 0 auto 20px;
+}
+.header h1,.header h3,.header p{
+    text-align: center;
+}
+.header h1{
+    line-height: 2;
+}
+.header h3{
+    line-height: 1.7;
+}
+#mainbody{
+    margin: 10px auto;
+    width: 1024px;
+}
+.turntable{
+    background: url(../img/timg.png) no-repeat;
+    width: 1024px;
+    height: 1024px;
+    position: relative;
+}
+.pointer{
+    width: 1024px;
+    height: 1024px;
+    background: url(../img/pointer.png) no-repeat;
+    cursor: pointer;
+    /* transform: rotate(); */
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 20px;
+}
+h1{
+    font-size: 32px;
+    margin: 20px 0;
+}
+li{
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+img{
+    height: 200px;
+    margin-right: 8px;
+}
+form{
+    margin: 20px 0;
+}

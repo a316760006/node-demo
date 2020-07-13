@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加图书</title>
+    <link rel="stylesheet" href="css/pure.css">
+</head>
+<body>
+   <h1>
+        添加图书
+   </h1>
+   <hr>
+   <form action="/addbook" method="POST" class="pure-form">
+    <table class="pure-table">
+        <tr>
+            <th>
+                标题
+            </th>
+            <td>
+                <input type="text" name="title">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                作者
+            </th>
+            <td>
+                <input type="text" name="author">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                分类
+            </th>
+            <td>
+                <input type="text" name="category">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right">
+                <button type="submit">提交</button>
+            </td>
+        </tr>
+    </table>
+   </form>
+</body>
+</html>

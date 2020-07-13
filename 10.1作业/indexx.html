@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: gray;
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            margin: 0 auto;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            position: relative;
+        }
+
+        .head {
+            width: 140px;
+            height: 120px;
+            border-radius: 30%;
+            background: white;
+            position: relative;
+            left: -145px;
+            top: 70px;
+            z-index: 1;
+            /* border: 1px solid rgb(197, 197, 197); */
+            overflow: hidden;
+        }
+
+        .health {
+            width: 250px;
+            height: 125px;
+            border-radius: 20px 40px;
+            background: #F79E38;
+            position: relative;
+            border: 1px solid rgb(175, 116, 48);
+            background: linear-gradient(to right, white 20%, #F79E38 25%);
+        }
+
+        .leg {
+            width: 40px;
+            height: 100px;
+            background: #F79E38;
+            position: absolute;
+            top: 65px;
+            border-radius: 50px;
+            background: linear-gradient(#F79E38 85%, white 90%);
+        }
+
+        .leg1 {
+            left: 10px;
+            z-index: -1;
+            transform: rotate(7deg);
+        }
+
+        .leg2 {
+            left: 65px;
+            z-index: 1;
+            transform: rotate(-7deg);
+        }
+
+        .leg3 {
+            left: 145px;
+            z-index: -1;
+            transform: rotate(7deg);
+        }
+
+        .leg4 {
+            left: 200px;
+            z-index: 1;
+            transform: rotate(-7deg);
+        }
+
+        .tail {
+            width: 30px;
+            height: 40px;
+            transform: rotate(50deg);
+            position: absolute;
+            right: 0px;
+            top: -10px;
+            border-radius: 50px;
+            background: #F79E38;
+        }
+
+        .chest {
+            width: 30px;
+            height: 100%;
+            border-radius: 0 0 0 40px;
+            position: absolute;
+            top: -1px;
+            left: -1px;
+        }
+
+        .ear {
+            width: 45px;
+            height: 150px;
+            top: 10px;
+            background: #F79E38;
+            position: absolute;
+            z-index: -1;
+            border-radius: 50px/150px;
+        }
+
+        .earbox {
+            width: 160px;
+            height: 100px;
+            position: relative;
+            left: -159px;
+            top: 105px;
+            overflow: hidden;
+        }
+
+        .ear1 {
+            left: 35px;
+            transform: rotate(-30deg);
+        }
+
+        .ear2 {
+            right: 15px;
+            transform: rotate(20deg);
+        }
+
+        .right {
+            border-radius: 0 15%;
+            background: #F79E38;
+            width: 80px;
+            height: 70px;
+            position: absolute;
+            right: -10px;
+            top: -20px;
+        }
+
+        .left {
+            border-radius: 35% 0;
+            background: #F79E38;
+            width: 50px;
+            height: 70px;
+            position: absolute;
+            left: -6px;
+            top: -25px;
+            transform: rotate(15deg);
+        }
+
+        .nose {
+            width: 80px;
+            height: 70px;
+            background: white;
+            z-index: -2;
+            position: absolute;
+            top: 218px;
+            left: 25px;
+            border-radius: 40px;
+            transform: rotate(7deg);
+            z-index: 2;
+        }
+
+        .black {
+            width: 37px;
+            height: 30px;
+            background: black;
+            position: absolute;
+            left: -15px;
+            border-radius: 50px;
+        }
+
+        .eye-right {
+            width: 3px;
+            border: 3px solid black;
+            border-radius: 40%;
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+        }
+
+        .eye-left {
+            width: 3px;
+            border: 3px solid black;
+            border-radius: 40%;
+            position: absolute;
+            bottom: 15px;
+            left: -20px;
+        }
+
+        .mouth {
+            width: 36px;
+            height: 30px;
+            border-bottom: 3px solid black;
+            border-right: 3px solid black;
+            position: relative;
+            top: 5px;
+            left: 31px;
+            border-radius: 0 0 30px 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="earbox">
+            <div class="ear ear1"></div>
+            <div class="ear ear2"></div>
+        </div>
+        <div class="nose">
+            <div class="black"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="head">
+            <div class="left">
+            </div>
+            <div class="right">
+                <div class="eye-left"></div>
+                <div class="eye-right"></div>
+            </div>
+        </div>
+        <div class="health">
+            <div class="leg leg1"></div>
+            <div class="leg leg2"></div>
+            <div class="leg leg3"></div>
+            <div class="leg leg4"></div>
+            <div class="tail"></div>
+        </div>
+    </div>
+    <h1>狗/柯基</h1>
+</body>
+
+</html>
+<!-- 孜然鸡丁*2  菜花土豆片*1  小炒腐竹*1 -->

@@ -1,0 +1,11 @@
+这是一个图书管理系统的小项目
+public      是一个静态资源目录,存放 css img 等
+
+modules     中的 
+            template.js 是模板模块处理
+            router.js   是路由模块
+            service.js  是服务处理模块
+
+views       是存放视图的地方
+
+index.js    是入口文件

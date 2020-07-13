@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幸运大转盘</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>北京工商管理专修学院</h1>
+        <h3>数字媒体学院-web架构专业</h3>
+        <p>幸运大转盘</p>
+    </header>
+    <section id="mainbody">
+        <div class="turntable">
+            <div class="pointer" ></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>
+            Copyright © 1994-2018 北京工商管理专修学院 版权所有
+        </p>
+        <p>
+            地址：北京市昌平区南口南大街21号 010-89794134 010-89794135 京ICP备06005330号 京公网安备110114000274号
+        </p>
+    </footer>
+    <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/rotate.js"></script>
+    <script>
+        $(function(){
+            var $pointer=$('.pointer');
+            
+            $pointer.on('click',function(){
+                $pointer.animate({rotate:'230deg'},1000,function(){
+                    console.log('xxxx');
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BUBA学生学籍管理|学生学籍列表页</title>
+    <link rel="stylesheet" href="/css/pure-min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1>学生学籍列表页</h1>
+    <hr/>
+    <br>
+    <br>
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th>
+                    学号
+                </th>
+                <th class="canSort">
+                    姓名
+                    <a href="/manage/student/{{cur_page}}/name/1" class="sort sortasc">^</a>
+                    <a href="/manage/student/{{cur_page}}/name" class="sort sortdesc">^</a>
+                </th>
+                <th class="canSort">
+                    学院
+                    <a href="/manage/student/{{cur_page}}/faculty/1" class="sort sortasc">^</a>
+                    <a href="/manage/student/{{cur_page}}/faculty" class="sort sortdesc">^</a>
+                </th>
+                <th>
+                    专业
+                </th>
+                <th>
+                    班级
+                </th>
+                <th>
+                    操作
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        {{if errmsg}}
+            <tr>
+                <td colspan="6" align="center">
+                    还没有任何学生档案，请先通过[添加学员]来添加
+                </td>
+            </tr>
+        {{else}}
+            {{each data}}
+            <tr>
+                <td>
+                    {{$value.studentId}}
+                </td>
+                <td>
+                    {{$value.name}}
+                </td>
+                <td>
+                    {{$value.faculty}}
+                </td>
+                <td>
+                    {{$value.master}}
+                </td>
+                <td>
+                    {{$value.classname}}
+                </td>
+                <td>
+                    <a href="/manage/studentHref/{{$value.studentId}}">查看</a> | <a href="/manage/editStudent/{{$value.studentId}}">编辑</a>
+                </td>          
+            </tr>
+            {{/each}}
+            {{/if}}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="pages">
+                    {{if pages>5}}
+                        {{if cur_page!=1}}
+                        <a href="/manage/student/1/{{orderby}}/{{ordersort}}">&lt;&lt;</a>
+                        
+                        <a href="/manage/student/{{cur_page-1}}/{{orderby}}/{{ordersort}}">&lt;</a>
+                        {{/if}}
+                    {{/if}}
+                    {{each pagecount}}
+                    {{if cur_page==$value}}
+                    <span>{{$value}}</span>&nbsp;
+                    {{else}}
+                    <a href="/manage/student/{{$value}}/{{orderby}}/{{ordersort}}">{{$value}}</a>&nbsp;
+                    {{/if}}
+                    {{/each}}
+
+                    {{if pages>5}}
+                        {{if cur_page!=pages}}
+                        <a href="/manage/student/{{cur_page+1}}/{{orderby}}/{{ordersort}}">&gt;</a>
+                        <a href="/manage/student/{{pages}}/{{orderby}}/{{ordersort}}">&gt;&gt;</a>
+                        {{/if}}
+                    {{/if}}
+                </td>
+                <td>
+                    <a href="/addStudentHref">添加学员</a>
+                    <br/>
+                    <a href="/addStudentsHref">批量添加学员</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+</body>
+</html>
